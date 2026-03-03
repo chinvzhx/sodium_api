@@ -1,4 +1,9 @@
 const downloadButton = document.getElementById("download");
 downloadButton.addEventListener("click", () => {
-    window.location.href = "C:\\Users\\levan\\OneDrive\\Desktop\\ravici aba\\the site\\sodium_api_forge.bat";
+    const link = document.createElement("a");
+    link.href = "files/sodium_api_forge.bat"; // relative path to your file
+    link.download = "sodium_api_forge.bat";   // suggested filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 });
